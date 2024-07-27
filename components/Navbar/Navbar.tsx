@@ -26,7 +26,7 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <div className="w-full flex items-center justify-between py-1 px-4 md:px-6 md:py-3 divbg rounded-full text-sm md:text-lg">
-      <h3>Somadina's Portfolio</h3>
+      <h3>Somadina&apos;s Portfolio</h3>
 
       <ul className="flex items-center justify-between w-2/5">
         {navLinks.map(({ href, name }, index) => (
