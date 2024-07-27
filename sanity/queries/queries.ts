@@ -8,3 +8,7 @@ title,
 socialLinks,
 "resumeUrl": resume.asset->url
 }`;
+
+export const getResumeUrlQuery = groq`*[_type == "hero"][0]{
+    "resumeUrl": resume.asset->url
+    }`;

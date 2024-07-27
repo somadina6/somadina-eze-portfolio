@@ -10,7 +10,7 @@ export default async function ContactEmail() {
       <h2 className="myh2 mb-4">Have a project in mind?</h2>
       <a
         href="mailto:somadina6@gmail.com"
-        className="bg-blue rounded-3xl px-5 py-2 myh2 text-center"
+        className="bg-blue rounded-3xl px-5 py-2 myh2 text-center md:text-lg hover:opacity-90"
       >
         Contact Me
       </a>
