@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.divbg {
+  @apply dark:bg-black-100 bg-white border border-black-100 rounded-3xl md:p-5 p-2;
+}
+
+.myh2 {
+  @apply text-sm md:text-xl lg:text-3xl font-[500];
+}

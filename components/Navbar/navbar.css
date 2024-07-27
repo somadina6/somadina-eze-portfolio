@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  max-width: 746px;
+  padding: 40px 48px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--xl-spacing, 32px);
+  flex: 1 0 0;
+  align-self: stretch;
+
+  border-radius: 24px;
+  background: #131315;
+}
