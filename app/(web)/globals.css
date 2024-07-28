@@ -9,3 +9,7 @@
 .myh2 {
   @apply text-sm md:text-xl lg:text-3xl font-[500];
 }
+
+.img1 {
+  @apply w-[40px] h-[20px] md:w-[100px] md:h-[50px];
+}

@@ -55,24 +55,10 @@ export type Hero = {
   name?: string;
   title?: string;
   bio?: string;
-  content?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
+  current_company?: {
+    company_name?: string;
+    company_url?: string;
+  };
   profileImage?: {
     asset?: {
       _ref: string;
@@ -123,38 +109,35 @@ export type SanityFileAsset = {
   source?: SanityAssetSourceData;
 };
 
-export type BlockContent = Array<
-  | {
-      children?: Array<{
-        marks?: Array<string>;
-        text?: string;
-        _type: "span";
-        _key: string;
-      }>;
-      style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-      listItem?: "bullet";
-      markDefs?: Array<{
-        href?: string;
-        _type: "link";
-        _key: string;
-      }>;
-      level?: number;
-      _type: "block";
-      _key: string;
-    }
-  | {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      _type: "image";
-      _key: string;
-    }
->;
+export type BlockContent = Array<{
+  children?: Array<{
+    marks?: Array<string>;
+    text?: string;
+    _type: "span";
+    _key: string;
+  }>;
+  style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+  listItem?: "bullet";
+  markDefs?: Array<{
+    href?: string;
+    _type: "link";
+    _key: string;
+  }>;
+  level?: number;
+  _type: "block";
+  _key: string;
+} | {
+  asset?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+  };
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  _type: "image";
+  _key: string;
+}>;
 
 export type Experience = {
   _id: string;
@@ -261,26 +244,11 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes =
-  | SanityImagePaletteSwatch
-  | SanityImagePalette
-  | SanityImageDimensions
-  | Geopoint
-  | Hero
-  | SanityFileAsset
-  | BlockContent
-  | Experience
-  | Project
-  | SanityImageCrop
-  | SanityImageHotspot
-  | SanityImageAsset
-  | SanityAssetSourceData
-  | SanityImageMetadata
-  | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Hero | SanityFileAsset | BlockContent | Experience | Project | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/queries/queries.ts
 // Variable: getHeroQuery
-// Query: *[_type == "hero"][0]{name,bio,"imageUrl": profileImage.asset->url,title,socialLinks,"resumeUrl": resume.asset->url}
+// Query: *[_type == "hero"][0]{name,bio,"imageUrl": profileImage.asset->url,title,socialLinks,"resumeUrl": resume.asset->url,current_company}
 export type GetHeroQueryResult = {
   name: string | null;
   bio: string | null;
@@ -293,6 +261,10 @@ export type GetHeroQueryResult = {
     _key: string;
   }> | null;
   resumeUrl: string | null;
+  current_company: {
+    company_name?: string;
+    company_url?: string;
+  } | null;
 } | null;
 // Variable: getResumeUrlQuery
 // Query: *[_type == "hero"][0]{    "resumeUrl": resume.asset->url    }

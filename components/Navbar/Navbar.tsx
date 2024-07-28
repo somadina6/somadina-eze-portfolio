@@ -62,7 +62,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full md:flex items-center justify-between py-1 px-4 md:px-6 md:py-3 divbg rounded-full text-sm md:text-base">
+    <div className="w-full md:flex items-center justify-between py-1 px-2 md:px-4 md:py-2 divbg rounded-full text-sm md:text-base">
       <h3 className="hidden md:block">Somadina&apos;s Portfolio</h3>
 
       <div ref={navRef} className="md:w-[70%]">

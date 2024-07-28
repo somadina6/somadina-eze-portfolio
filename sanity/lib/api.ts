@@ -7,7 +7,7 @@ export async function getHeroData() {
     const result = await client.fetch<GetHeroQueryResult>(
       queries.getHeroQuery,
       {},
-      { cache: "default" }
+      { cache: "no-cache" }
     );
     if (!result) throw new Error("Failed to get Hero section");
     console.log(result);
