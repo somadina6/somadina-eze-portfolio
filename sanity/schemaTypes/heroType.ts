@@ -58,6 +58,7 @@ export const heroType = defineType({
     defineField({
       name: "socialLinks",
       title: "Social Links",
+      validation: (rule) => rule.required().error("A Social Link is required"),
       type: "array",
       of: [
         {
@@ -85,6 +86,8 @@ export const heroType = defineType({
               title: "Icon",
               type: "url",
               description: "Icon URL of social media",
+              validation: (rule) =>
+                rule.required().error("Icon URL is required"),
             },
             {
               name: "image",
