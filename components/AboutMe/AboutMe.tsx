@@ -15,8 +15,8 @@ const AboutMe = () => {
       <p className="md:text-base tracking-wider text-xs">
         In these roles, I&apos;ve developed robust applications using
         TypeScript, React, Angular, Node.js, Flask, and NestJS. My expertise
-        extends to cloud services like AWS, GCP, and Azure, where I've built
-        scalable solutions and automated workflows with Docker and GitHub
+        extends to cloud services like AWS, GCP, and Azure, where I&apos;ve
+        built scalable solutions and automated workflows with Docker and GitHub
         Actions.
       </p>
     </section>
