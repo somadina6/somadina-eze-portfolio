@@ -90,6 +90,9 @@ export const heroType = defineType({
       type: "file",
       description: "Upload your resume file (e.g., PDF).",
       validation: (rule) => rule.required().error("Resume is required"),
+      options: {
+        storeOriginalFilename: true,
+      },
     }),
   ],
 });

@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <ThemeProvider>
-          <main className="font-normal px-12 py-4 min-h-lvh overflow-x-hidden">
+          <main className="font-normal px-4 md:px-12 py-4 min-h-lvh overflow-x-hidden">
             <Navbar />
             {children}
           </main>
