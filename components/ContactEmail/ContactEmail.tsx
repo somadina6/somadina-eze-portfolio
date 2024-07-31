@@ -17,9 +17,9 @@ export default function ContactEmail() {
       <h2 className="myh2 text-center">Have a project in mind?</h2>
       <a
         href="mailto:somadina6@gmail.com"
-        className="bg-blue rounded-3xl px-2 md:px-3 py-1 md:py-2 flex items-center text-center text-sm md:text-lg hover:opacity-90 mt-2"
+        className="bg-blue rounded-3xl px-2 md:px-3 py-1 md:py-2 flex items-center text-center text-sm justify-center md:text-lg hover:opacity-90 mt-2"
       >
-        <p className="hidden md:block">Contact Me</p><span className="block md:hidden img1">DM</span>
+        <p className="hidden md:block">Contact Me</p><span className="block md:hidden">DM</span>
       </a>
     </section>
   );
