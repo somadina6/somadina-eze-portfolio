@@ -10,7 +10,6 @@ export async function getHeroData() {
       { cache: "no-cache" }
     );
     if (!result) throw new Error("Failed to get Hero section");
-    // console.log(result);
     return result;
   } catch (error) {
     console.log(error);
@@ -19,13 +18,14 @@ export async function getHeroData() {
 
 export async function getResumeData() {
   try {
-    const result = await client.fetch<GetResumeUrlQueryResult>(
-      queries.getResumeUrlQuery,
-      {},
-      { cache: "default" }
-    );
-    if (!result) throw new Error("Failed to get Resume URL");
-    return result;
+    const res = await fetch("/api/sanity/resume");
+
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data: GetResumeUrlQueryResult = await res.json();
+    return data;
   } catch (error) {
     console.log(error);
   }

@@ -15,8 +15,6 @@ const ProfileLinks = async ({
     | null
     | undefined;
 }) => {
-  if (profileLinks) console.log(profileLinks[0]);
-
   if (!profileLinks) {
     return null;
   }

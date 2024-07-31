@@ -20,9 +20,9 @@ export default async function Hero() {
       <div className="flex flex-col items-center min-w-[100px] md:min-w-[200px] lg:min-w-[30px]">
         <div
           id="profile_image_div"
-          className="rounded-full overflow-hidden w-[40px] h-[40px] md:w-[150px] md:h-[150px] mb-1 md:mb-2"
+          className="rounded-full overflow-hidden w-[50px] h-[50px] md:w-[160px] md:h-[160px] mb-1 md:mb-2"
         >
-          <Image src={profileImageUrl} width={150} height={150} alt={name} />
+          <Image src={profileImageUrl} width={160} height={160} alt={name} />
         </div>
         <ProfileLinks profileLinks={profileLinks} />
         <h1 className="text-lg md:text-2xl lg:text-5xl font-[500]">{name}</h1>

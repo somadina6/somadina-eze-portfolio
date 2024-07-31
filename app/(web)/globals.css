@@ -11,5 +11,5 @@
 }
 
 .img1 {
-  @apply w-[40px] h-[20px] md:w-[100px] md:h-[50px];
+  @apply w-[30px] h-[30px] md:w-[50px] md:h-[50px] mb-0;
 }
