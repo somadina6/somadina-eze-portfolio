@@ -25,7 +25,7 @@ export default async function Hero() {
           <Image src={profileImageUrl} width={160} height={160} alt={name} />
         </div>
         <ProfileLinks profileLinks={profileLinks} />
-        <h1 className="text-lg md:text-2xl lg:text-5xl font-[500]">{name}</h1>
+        <h1 className="myh1">{name}</h1>
       </div>
 
       <h2 className="myh2 lg:flex-[1]">

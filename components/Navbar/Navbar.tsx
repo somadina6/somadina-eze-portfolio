@@ -9,7 +9,7 @@ const navLinks = [
     name: "Home",
     href: "/",
   },
-  
+
   {
     name: "Projects",
     href: "#projects",
@@ -32,19 +32,56 @@ export default function Navbar() {
   const pathname = usePathname();
   const [myResumeURL, setResumeURL] = useState("/docs/Somadina_Eze.pdf");
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
 
   const navRef = useRef<HTMLDivElement>(null);
 
+  // Handle navbar auto hide scrolling down
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        setShowNavbar(false);
+      } else {
+        // Scrolling up
+        setShowNavbar(true);
+      }
+      setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+
+  // Handle resume fetch from sanity
+  useEffect(() => {
+    let isMounted = true;
+
     const getResumeUrl = async () => {
-      const resume = await getResumeData();
-      if (resume?.resumeUrl) {
-        setResumeURL(resume.resumeUrl);
+      try {
+        const resume = await getResumeData();
+        if (isMounted && resume?.resumeUrl) {
+          setResumeURL(`${resume.resumeUrl}/Somadina_Eze_Resume.pdf?dl`);
+        }
+      } catch (error) {
+        console.error("Failed to fetch resume data:", error);
       }
     };
+
     getResumeUrl();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
+  // Handle menu option on mobile
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -63,7 +100,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full md:flex items-center justify-between py-1 px-2 md:px-4 md:py-2 divbg rounded-full text-sm md:text-base">
+    <div
+      className={`fixed w-[calc(100%-32px)] md:w-[calc(100%-96px)] md:flex items-center justify-between py-1 px-2 md:px-4 md:py-5 bg-black z-2 rounded- text-sm md:text-base transition-[0.3s] ${showNavbar ? "top-0" : "-top-[70px]"}`}
+    >
       <h3 className="hidden md:block">Somadina&apos;s Portfolio</h3>
 
       <div ref={navRef} className="md:w-[70%]">
@@ -96,6 +135,7 @@ export default function Navbar() {
                 href={name === "Resume" ? myResumeURL : href}
                 target={name === "Resume" ? "_blank" : "_self"}
                 onClick={() => setMenuOpen(false)}
+                rel={name === "Resume" ? "noopener noreferrer" : ""}
               >
                 {name}
               </Link>

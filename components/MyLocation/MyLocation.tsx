@@ -3,7 +3,7 @@ import React from "react";
 
 const MyLocation = () => {
   return (
-    <section className="divbg col-span-12 md:col-span-4 row-span-1 md:row-span-1 gap-1 items-center flex flex-col ">
+    <section className="divbg col-span-6 md:col-span-4 row-span-1 md:row-span-1 gap-1 items-center flex flex-col ">
       <div className="img1">
         <Image
           src="/icons/globeIcon.svg"

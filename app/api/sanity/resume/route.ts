@@ -8,7 +8,7 @@ export async function GET(req: Request) {
     const result = await client.fetch<GetResumeUrlQueryResult>(
       queries.getResumeUrlQuery,
       {},
-      { cache: "default" }
+      { cache: "no-cache" }
     );
     if (result && result.resumeUrl) {
       return NextResponse.json(result, { status: 200, statusText: "success" });

@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .divbg {
   @apply dark:bg-black-100 bg-white border border-black-100 rounded-3xl md:p-5 p-2;
+}
+
+.myh1 {
+  @apply text-lg md:text-2xl lg:text-5xl font-[500];
 }
 
 .myh2 {
