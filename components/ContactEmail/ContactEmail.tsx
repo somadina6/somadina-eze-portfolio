@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default async function ContactEmail() {
+export default function ContactEmail() {
   return (
     <section
       id="contact_email"
@@ -19,7 +19,7 @@ export default async function ContactEmail() {
         href="mailto:somadina6@gmail.com"
         className="bg-blue rounded-3xl px-2 md:px-3 md:py-2  text-center text-sm md:text-lg hover:opacity-90 mt-2"
       >
-        Contact Me
+        <p className="hidden md:block">Contact Me</p><span className="block md:hidden img1">DM</span>
       </a>
     </section>
   );
