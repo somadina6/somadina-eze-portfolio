@@ -18,13 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <ThemeProvider>
-          <main className="font-normal px-12 py-4 min-h-lvh overflow-x-hidden">
-            <Navbar />
-            {children}
-          </main>
-        </ThemeProvider>
+      <body className={`${inter.className} `}>
+        <main className="dark dark:text-white dark:bg-black text-black w-screen font-normal px-4 md:px-12 pb-4 min-h-lvh overflow-x-hidden">
+          <Navbar />
+          {children}
+        </main>
       </body>
     </html>
   );

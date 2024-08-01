@@ -1,6 +1,6 @@
 "use client";
 import { ThemeContext } from "@/context/themeContext";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [componentRendered, setComponentRendered] = useState<boolean>(false);
@@ -10,16 +10,18 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       ? JSON.parse(localStorage.getItem("soma-theme")!)
       : false;
 
-  const [darkTheme, setDarkTheme] = useState<boolean>(true);
+  const [darkTheme, setDarkTheme] = useState<boolean>(themeFromStorage);
 
   useEffect(() => {
     setComponentRendered(true);
   }, []);
 
+  const contextValue = useMemo(() => ({ darkTheme, setDarkTheme }), [darkTheme]);
+
   if (!componentRendered) return <></>;
 
   return (
-    <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
+    <ThemeContext.Provider value={contextValue}>
       <div className={`${darkTheme ? "dark" : ""} `}>
         <div className="dark:text-white dark:bg-black text-black w-screen">
           {children}

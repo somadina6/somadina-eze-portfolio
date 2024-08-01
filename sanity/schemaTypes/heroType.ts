@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import {} from "@sanity/icons";
 
 export const heroType = defineType({
   name: "hero",
@@ -27,12 +28,19 @@ export const heroType = defineType({
       description: "A brief biography or introduction about yourself.",
     }),
     defineField({
-      name: "content",
-      title: "Content",
-      type: "array",
-      of: [
+      name: "current_company",
+      title: "Current Company",
+      type: "object",
+      fields: [
         {
-          type: "block",
+          name: "company_name",
+          title: "Company Name",
+          type: "text",
+        },
+        {
+          name: "company_url",
+          title: "Company Website",
+          type: "url",
         },
       ],
     }),
@@ -50,6 +58,7 @@ export const heroType = defineType({
     defineField({
       name: "socialLinks",
       title: "Social Links",
+      validation: (rule) => rule.required().error("A Social Link is required"),
       type: "array",
       of: [
         {
@@ -77,6 +86,16 @@ export const heroType = defineType({
               title: "Icon",
               type: "url",
               description: "Icon URL of social media",
+              validation: (rule) =>
+                rule.required().error("Icon URL is required"),
+            },
+            {
+              name: "image",
+              title: "Image or Icon",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
             },
           ],
         },
@@ -90,6 +109,9 @@ export const heroType = defineType({
       type: "file",
       description: "Upload your resume file (e.g., PDF).",
       validation: (rule) => rule.required().error("Resume is required"),
+      options: {
+        storeOriginalFilename: true,
+      },
     }),
   ],
 });

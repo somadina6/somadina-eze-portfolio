@@ -55,24 +55,10 @@ export type Hero = {
   name?: string;
   title?: string;
   bio?: string;
-  content?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
+  current_company?: {
+    company_name?: string;
+    company_url?: string;
+  };
   profileImage?: {
     asset?: {
       _ref: string;
@@ -88,6 +74,17 @@ export type Hero = {
     platform?: string;
     url?: string;
     icon?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
     _key: string;
   }>;
   resume?: {
@@ -280,19 +277,24 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/queries/queries.ts
 // Variable: getHeroQuery
-// Query: *[_type == "hero"][0]{name,bio,"imageUrl": profileImage.asset->url,title,socialLinks,"resumeUrl": resume.asset->url}
+// Query: *[_type == "hero"][0]{name,bio,"imageUrl": profileImage.asset->url,title,"socialLinks": socialLinks[]{      "platform": platform,      "url": url,      "icon": icon,      "image": image.asset->url,      "_key":_key    },"resumeUrl": resume.asset->url,current_company}
 export type GetHeroQueryResult = {
   name: string | null;
   bio: string | null;
   imageUrl: string | null;
   title: string | null;
   socialLinks: Array<{
-    platform?: string;
-    url?: string;
-    icon?: string;
+    platform: string;
+    url: string;
+    icon: string;
+    image: string;
     _key: string;
   }> | null;
   resumeUrl: string | null;
+  current_company: {
+    company_name?: string;
+    company_url?: string;
+  } | null;
 } | null;
 // Variable: getResumeUrlQuery
 // Query: *[_type == "hero"][0]{    "resumeUrl": resume.asset->url    }
