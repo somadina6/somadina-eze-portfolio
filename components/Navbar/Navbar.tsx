@@ -3,6 +3,7 @@ import { getResumeData } from "@/sanity/lib/api";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import ProfileLinks from "../Hero/ProfileLinks";
 
 const navLinks = [
   {
@@ -101,11 +102,11 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed w-[calc(100%-32px)] md:w-[calc(100%-96px)] md:flex items-center justify-between py-1 px-2 md:px-4 md:py-5 bg-black z-2 rounded- text-sm md:text-base transition-[0.3s] ${showNavbar ? "top-0" : "-top-[70px]"}`}
+      className={`md:flex items-center justify-between py-1 px-2 md:px-4 md:py-8 bg-black  text-sm md:text-base transition-[0.3s] md:h-12`}
     >
-      <h3 className="hidden md:block">Somadina&apos;s Portfolio</h3>
+      <h3 className="hidden md:block text-sm">Somadina&apos;s Portfolio</h3>
 
-      <div ref={navRef} className="md:w-[70%]">
+      <div ref={navRef} className="w-full md:w-[420px] text-left ">
         <button onClick={toggleMenu} className="focus:outline-none md:hidden">
           <svg
             className="w-6 h-6"
@@ -124,12 +125,12 @@ export default function Navbar() {
         </button>
 
         <ul
-          className={`flex-col md:flex-row md:flex ${isMenuOpen ? "flex" : "hidden"} md:w-full justify-between`}
+          className={`flex-col md:flex-row md:flex ${isMenuOpen ? "flex" : "hidden"} md:w-full justify-between items-end `}
         >
           {navLinks.map(({ href, name }, index) => (
             <li
               key={index}
-              className={`hover:text-white ${pathname === href ? "dark:text-blue" : "dark:text-gray-100"}`}
+              className={`text-sm hover:text-white ${pathname === href ? "dark:text-blue" : "dark:text-gray-100"}`}
             >
               <Link
                 href={name === "Resume" ? myResumeURL : href}

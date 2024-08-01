@@ -7,15 +7,15 @@ html {
 }
 
 .divbg {
-  @apply dark:bg-black-100 bg-white border border-black-100 rounded-3xl md:p-5 p-2;
+  @apply dark:bg-black-100 rounded-md md:rounded-3xl md:p-5 px-5 py-3 flex flex-col items-center md:gap-3;
 }
 
 .myh1 {
-  @apply text-lg md:text-2xl lg:text-5xl font-[500];
+  @apply text-base md:text-xl lg:text-3xl font-[500];
 }
 
 .myh2 {
-  @apply text-sm md:text-xl lg:text-3xl font-[500];
+  @apply text-sm md:text-lg font-[500];
 }
 
 .img1 {

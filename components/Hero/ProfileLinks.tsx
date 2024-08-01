@@ -1,20 +1,10 @@
+import { getHeroData } from "@/sanity/lib/api";
 import Image from "next/image";
 import React from "react";
 
-const ProfileLinks = async ({
-  profileLinks,
-}: {
-  profileLinks:
-    | {
-        platform: string;
-        url: string;
-        icon: string;
-        image: string;
-        _key: string;
-      }[]
-    | null
-    | undefined;
-}) => {
+const ProfileLinks = async () => {
+  const hero = await getHeroData();
+  const profileLinks = hero?.socialLinks;
   if (!profileLinks) {
     return null;
   }

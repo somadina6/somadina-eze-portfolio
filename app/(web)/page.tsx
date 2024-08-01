@@ -9,19 +9,16 @@ export default async function Home() {
     <main>
       <div
         id="hero_contact"
-        className="grid grid-cols-12 h-auto gap-2 mt-2 grid-rows-2 overflow-hidden pt-12"
+        className=" grid grid-cols-12 gap-2 md:gap-4 overflow-hidden bg-black  h-auto"
       >
         <Hero />
-        <MyLocation />
-        <ContactEmail />
+        <AboutMe />
+        <MyStack />
       </div>
       <div
         id="city_about"
         className="grid grid-cols-12 h-auto gap-2 mt-2 grid-rows-4 md:grid-rows-3"
-      >
-        <AboutMe />
-        <MyStack />
-      </div>
+      ></div>
       <section id="projects">
         <div className="h-96"></div>
       </section>
