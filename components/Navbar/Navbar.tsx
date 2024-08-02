@@ -17,11 +17,11 @@ const navLinks = [
   },
   {
     name: "Experience",
-    href: "/experience",
+    href: "#experience",
   },
   {
     name: "Contact",
-    href: "/contact",
+    href: "#contact",
   },
   {
     name: "Resume",
