@@ -19,7 +19,13 @@ const ProfileLinks = () => {
   return (
     <section className="flex mx-auto gap-2">
       {socialLinks.map(({ _key, platform, url, image }) => (
-        <a key={_key} href={url} target="_blank">
+        <a
+          key={_key}
+          href={url}
+          target="_blank"
+          className="hover:scale-110 transition"
+          rel="noopener noreferrer"
+        >
           <Image
             width={30}
             height={30}

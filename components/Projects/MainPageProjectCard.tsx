@@ -21,7 +21,7 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-1 md:p-3 hover:scale-105 transition h-full flex flex-col">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-1 md:p-3 hover:scale-105 transition h-full flex flex-col cursor-pointer">
       <div className="flex flex-col items-center p-1 md:p-3">
         <div className="flex flex-col items-center text-center ">
           {/* Project Title */}

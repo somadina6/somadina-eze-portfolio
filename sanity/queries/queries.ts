@@ -22,4 +22,4 @@ export const getProjectsDataQuery = groq`*[_type == 'project']{
   skills,
 coverImage,
   "images": image
-  }`;
+  } | order(title desc)`;
