@@ -39,26 +39,26 @@ export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
 
   // Handle navbar auto hide scrolling down
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll =
-        window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScroll > lastScrollTop) {
-        // Scrolling down
-        setShowNavbar(false);
-      } else {
-        // Scrolling up
-        setShowNavbar(true);
-      }
-      setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScroll =
+  //       window.pageYOffset || document.documentElement.scrollTop;
+  //     if (currentScroll > lastScrollTop) {
+  //       // Scrolling down
+  //       setShowNavbar(false);
+  //     } else {
+  //       // Scrolling up
+  //       setShowNavbar(true);
+  //     }
+  //     setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollTop]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollTop]);
 
   // Handle resume fetch from sanity
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Navbar() {
       try {
         const resume = await getResumeData();
         if (isMounted && resume?.resumeUrl) {
-          setResumeURL(`${resume.resumeUrl}/Somadina_Eze_Resume.pdf?dl`);
+          setResumeURL(`${resume.resumeUrl}/Somadina_Eze_Resume.pdf`);
         }
       } catch (error) {
         console.error("Failed to fetch resume data:", error);
