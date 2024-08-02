@@ -13,7 +13,7 @@ html {
 }
 
 .divbg {
-  @apply dark:bg-black-100 rounded-md md:rounded-3xl md:p-5 px-5 py-3 flex flex-col items-center md:gap-3;
+  @apply dark:bg-black-100 bg-neutral-50 rounded-md md:rounded-3xl md:p-5 px-5 py-3 flex flex-col items-center md:gap-3;
 }
 
 .myh1 {

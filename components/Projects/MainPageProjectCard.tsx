@@ -8,6 +8,7 @@ interface CardProps {
   imageSrc: string;
   link: string;
   skills: string[];
+  slug: string;
 }
 
 const MainPageProjectCard: FC<CardProps> = ({
@@ -16,14 +17,15 @@ const MainPageProjectCard: FC<CardProps> = ({
   description,
   imageSrc,
   link,
+  slug,
   skills,
 }) => {
   return (
-    <div className="bg-black-100 rounded-xl p-1 md:p-3 hover:scale-105 transition">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-1 md:p-3 hover:scale-105 transition h-full flex flex-col">
       <div className="flex flex-col items-center p-1 md:p-3">
         <div className="flex flex-col items-center text-center ">
           {/* Project Title */}
-          <div className="font-[500] text-white text-sm md:text-2xl ">
+          <div className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wider">
             {title}
           </div>
           <p className="text-[#8A8A93] font-[300] text-sm md:text-base">
@@ -32,32 +34,30 @@ const MainPageProjectCard: FC<CardProps> = ({
         </div>
         {/* Description */}
 
-        <p className="mt-2 font-[300] text-gray-300 text-sm md:text-base line-clamp-1">
+        <p className="font-[300] text-[#8A8A93] text-sm md:text-base line-clamp-1 md:line-clamp-2">
           {description}
         </p>
       </div>
-      <div className="rounded-lg overflow-hidden">
+      <div className="rounded-lg overflow-hidden w-full flex-grow">
         <Image
-          className="h-48 w-full object-cover md:h-full "
+          className="h-48 w-full object-bottom md:h-full "
           src={imageSrc}
           alt={title}
-          width={384}
-          height={256}
+          width={2834}
+          height={1034}
         />
       </div>
       {/* Stack */}
-      <div className="flex gap-1 md:gap-2 pt-1 md:pt-3 font-[300]">
-        <p>Technologies:</p>
-        <div className="flex gap-2 text-lg font-medium text-white">
-          {skills.map((skill, index) => (
-            <p
-              key={index}
-              className="text-[#8A8A93] font-[300] leading-6 text-sm md:text-base"
-            >
-              {skill}
-            </p>
-          ))}
-        </div>
+
+      <div className="flex gap-1 md:gap-3 text-lg font-medium items-center justify-center w-full line-clamp-1 mt-2 md:mt-4">
+        {skills.map((skill, index) => (
+          <p
+            key={index}
+            className="text-[#fff] bg-[#434344] font-[300] italic text-xs md:text-base tracking-tighter md:tracking-tight rounded-full md:px-2 px-1"
+          >
+            {skill}
+          </p>
+        ))}
       </div>
     </div>
   );

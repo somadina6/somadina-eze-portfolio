@@ -3,7 +3,6 @@ import { getResumeData } from "@/sanity/lib/api";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import ProfileLinks from "../Hero/ProfileLinks";
 
 const navLinks = [
   {
@@ -102,9 +101,11 @@ export default function Navbar() {
 
   return (
     <div
-      className={`md:flex items-center justify-between py-1 px-2 md:px-4 md:py-8 bg-black  text-sm md:text-base transition-[0.3s] md:h-12`}
+      className={`md:flex items-center justify-between py-1 px-2 md:px-4 md:py-8 dark:bg-black  text-sm md:text-base transition-[0.3s] md:h-12`}
     >
-      <h3 className="hidden md:block text-sm">Somadina&apos;s Portfolio</h3>
+      <Link href={"/"}>
+        <h3 className="hidden md:block text-sm">Somadina&apos;s Portfolio</h3>
+      </Link>
 
       <div ref={navRef} className="w-full md:w-[420px] text-left ">
         <button onClick={toggleMenu} className="focus:outline-none md:hidden">
@@ -130,7 +131,7 @@ export default function Navbar() {
           {navLinks.map(({ href, name }, index) => (
             <li
               key={index}
-              className={`text-sm hover:text-white ${pathname === href ? "dark:text-blue" : "dark:text-gray-100"}`}
+              className={`text-sm dark:hover:text-white hover:text-blue ${pathname === href ? "text-blue" : "text-gray-100"}`}
             >
               <Link
                 href={name === "Resume" ? myResumeURL : href}

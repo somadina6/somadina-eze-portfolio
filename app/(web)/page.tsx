@@ -4,13 +4,14 @@ import Hero from "@/components/Hero/Hero";
 import MyLocation from "@/components/MyLocation/MyLocation";
 import MyStack from "@/components/MyStack/MyStack";
 import MainPageProjectCard from "@/components/Projects/MainPageProjectCard";
+import ProjectsGrid from "@/components/Projects/ProjectsGrid";
 
 export default async function Home() {
   return (
     <main>
       <div
         id="hero_contact"
-        className=" grid grid-cols-12 gap-2 md:gap-4 overflow-hidden bg-black h-auto"
+        className=" grid grid-cols-12 gap-2 md:gap-4 overflow-hidden dark:bg-black h-auto"
       >
         <Hero />
         <AboutMe />
@@ -26,42 +27,7 @@ export default async function Home() {
           <span className="px-4">Projects</span>
           <hr className="flex-grow border-t-2 border-black-100" />
         </h1>
-
-        <div className="projects-grid grid-cols-1 lg:grid-cols-2">
-          <MainPageProjectCard
-            title="VerveAR"
-            subtitle="AR/VR SaaS Application"
-            description="A 3D, AR & Virtual Try-On platform for online retailers and modern brands. 
-            A 3D, AR & Virtual Try-On platform for online retailers and modern brands."
-            imageSrc="/projects/verve.png" // Replace with the correct path to your image
-            link="https://example.com" // Replace with your desired link
-            skills={["React", "MongoDB", "Express"]}
-          />
-          <MainPageProjectCard
-            title="VerveAR"
-            subtitle="Front-end development"
-            description="A 3D, AR & Virtual Try-On platform for online retailers and modern brands."
-            imageSrc="/projects/verve.png" // Replace with the correct path to your image
-            link="https://example.com" // Replace with your desired link
-            skills={["React", "MongoDB", "Express"]}
-          />
-          <MainPageProjectCard
-            title="VerveAR"
-            subtitle="Front-end development"
-            description="A 3D, AR & Virtual Try-On platform for online retailers and modern brands."
-            imageSrc="/projects/verve.png" // Replace with the correct path to your image
-            link="https://example.com" // Replace with your desired link
-            skills={["React", "MongoDB", "Express"]}
-          />{" "}
-          <MainPageProjectCard
-            title="VerveAR"
-            subtitle="Front-end development"
-            description="A 3D, AR & Virtual Try-On platform for online retailers and modern brands."
-            imageSrc="/projects/verve.png" // Replace with the correct path to your image
-            link="https://example.com" // Replace with your desired link
-            skills={["React", "MongoDB", "Express"]}
-          />
-        </div>
+        <ProjectsGrid />
       </section>
       <section>
         <ContactEmail />

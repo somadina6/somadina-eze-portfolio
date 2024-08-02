@@ -171,12 +171,24 @@ export type Project = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  description?: string;
-  link?: string;
-  slug?: Slug;
-  skills?: Array<string>;
-  image?: Array<{
+  title: string;
+  slug: Slug;
+  category: string;
+  description: string;
+  link: string;
+  skills: Array<string>;
+  coverImage: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image: Array<{
     asset?: {
       _ref: string;
       _type: "reference";
@@ -185,8 +197,7 @@ export type Project = {
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    caption?: string;
-    alt?: string;
+    alt: string;
     _type: "image";
     _key: string;
   }>;
@@ -285,3 +296,38 @@ export type GetHeroQueryResult = {
 export type GetResumeUrlQueryResult = {
   resumeUrl: string | null;
 } | null;
+// Variable: getProjectsDataQuery
+// Query: *[_type == 'project']{  _id,  title,  category,  link,  description,  "slug":slug.current,  skills,coverImage,  "images": image  }
+export type GetProjectsDataQueryResult = Array<{
+  _id: string;
+  title: string;
+  category: string;
+  link: string;
+  description: string;
+  slug: string;
+  skills: Array<string>;
+  coverImage: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  images: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt: string;
+    _type: "image";
+    _key: string;
+  }>;
+}>;
