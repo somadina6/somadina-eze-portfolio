@@ -52,14 +52,14 @@ export type Hero = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  name?: string;
-  title?: string;
+  name: string;
+  title: string;
   bio?: string;
   current_company?: {
-    company_name?: string;
-    company_url?: string;
+    company_name: string;
+    company_url: string;
   };
-  profileImage?: {
+  profileImage: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -70,11 +70,11 @@ export type Hero = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  socialLinks?: Array<{
-    platform?: string;
-    url?: string;
-    icon?: string;
-    image?: {
+  socialLinks: Array<{
+    platform: string;
+    url: string;
+    icon: string;
+    image: {
       asset?: {
         _ref: string;
         _type: "reference";
@@ -87,7 +87,7 @@ export type Hero = {
     };
     _key: string;
   }>;
-  resume?: {
+  resume: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -251,7 +251,7 @@ export type SanityImageMetadata = {
 
 export type Slug = {
   _type: "slug";
-  current?: string;
+  current: string;
   source?: string;
 };
 
@@ -259,9 +259,9 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/queries/queries.ts
 // Variable: getHeroQuery
-// Query: *[_type == "hero"][0]{name,"imageUrl": profileImage.asset->url,profileImage,"socialLinks": socialLinks[]{      "platform": platform,      "url": url,      "icon": icon,      "image": image.asset->url,      "_key":_key    },"resumeUrl": resume.asset->url,current_company}
+// Query: *[_type == "hero"][0]{name,"imageUrl": profileImage.asset->url,profileImage,"resumeUrl": resume.asset->url,current_company}
 export type GetHeroQueryResult = {
-  name: string | null;
+  name: string;
   imageUrl: string | null;
   profileImage: {
     asset?: {
@@ -273,18 +273,11 @@ export type GetHeroQueryResult = {
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     _type: "image";
-  } | null;
-  socialLinks: Array<{
-    platform: string | null;
-    url: string | null;
-    icon: string | null;
-    image: string | null;
-    _key: string;
-  }> | null;
+  };
   resumeUrl: string | null;
   current_company: {
-    company_name?: string;
-    company_url?: string;
+    company_name: string;
+    company_url: string;
   } | null;
 } | null;
 // Variable: getResumeUrlQuery

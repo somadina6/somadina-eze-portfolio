@@ -19,24 +19,22 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="bg-black-100 rounded-xl p-3">
-      <div className="md:flex flex items-center justify-center p-3">
-        <div className="">
+    <div className="bg-black-100 rounded-xl p-1 md:p-3 hover:scale-105 transition">
+      <div className="flex flex-col items-center p-1 md:p-3">
+        <div className="flex flex-col items-center text-center ">
           {/* Project Title */}
-          <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+          <div className="font-[500] text-white text-sm md:text-2xl ">
             {title}
           </div>
-          {/* Skills */}
-          <div className="flex gap-2 mt-1 text-lg leading-tight font-medium text-white">
-            {skills.map((skill, index) => (
-              <p key={index}>{skill}</p>
-            ))}
-          </div>
+          <p className="text-[#8A8A93] font-[300] text-sm md:text-base">
+            {subtitle}
+          </p>
         </div>
         {/* Description */}
-        <div className="">
-          <p className="mt-2 text-gray-300">{description}</p>
-        </div>
+
+        <p className="mt-2 font-[300] text-gray-300 text-sm md:text-base line-clamp-1">
+          {description}
+        </p>
       </div>
       <div className="rounded-lg overflow-hidden">
         <Image
@@ -46,6 +44,20 @@ const MainPageProjectCard: FC<CardProps> = ({
           width={384}
           height={256}
         />
+      </div>
+      {/* Stack */}
+      <div className="flex gap-1 md:gap-2 pt-1 md:pt-3 font-[300]">
+        <p>Technologies:</p>
+        <div className="flex gap-2 text-lg font-medium text-white">
+          {skills.map((skill, index) => (
+            <p
+              key={index}
+              className="text-[#8A8A93] font-[300] leading-6 text-sm md:text-base"
+            >
+              {skill}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );

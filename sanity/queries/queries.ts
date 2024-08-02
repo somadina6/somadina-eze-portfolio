@@ -4,13 +4,6 @@ export const getHeroQuery = groq`*[_type == "hero"][0]{
 name,
 "imageUrl": profileImage.asset->url,
 profileImage,
-"socialLinks": socialLinks[]{
-      "platform": platform,
-      "url": url,
-      "icon": icon,
-      "image": image.asset->url,
-      "_key":_key
-    },
 "resumeUrl": resume.asset->url,
 current_company
 }`;
