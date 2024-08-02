@@ -30,7 +30,6 @@ html {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px; /* Space between the grid items */
-  padding: 20px; /* Optional padding around the grid */
+  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+  gap: 20px;
 }
