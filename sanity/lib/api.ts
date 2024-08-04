@@ -44,13 +44,6 @@ export async function getProjectsData() {
     );
 
     return res;
-
-    // if (!res.ok) {
-    //   throw new Error("Network response was not ok");
-    // }
-
-    // const data: GetProjectsDataQueryResult = await res.json();
-    // return data;
   } catch (error) {
     console.log(error);
   }

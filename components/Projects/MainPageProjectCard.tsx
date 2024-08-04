@@ -21,7 +21,7 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-1 md:p-3 hover:scale-105 transition h-full flex flex-col cursor-pointer">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 hover:scale-105 transition h-[50vh] md:h-full flex flex-col cursor-pointer">
       <div className="flex flex-col items-center p-1 md:p-3">
         <div className="flex flex-col items-center text-center ">
           {/* Project Title */}
@@ -38,9 +38,9 @@ const MainPageProjectCard: FC<CardProps> = ({
           {description}
         </p>
       </div>
-      <div className="rounded-lg overflow-hidden w-full flex-grow">
+      <div className="rounded-lg overflow-hidden w-full flex-grow ">
         <Image
-          className="h-48 w-full object-bottom md:h-full "
+          className="w-full object-bottom h-full "
           src={imageSrc}
           alt={title}
           width={2834}
@@ -53,7 +53,7 @@ const MainPageProjectCard: FC<CardProps> = ({
         {skills.map((skill, index) => (
           <p
             key={index}
-            className="text-[#fff] bg-[#434344] font-[300] italic text-xs md:text-base tracking-tighter md:tracking-tight rounded-full md:px-2 px-1"
+            className="text-[#fff] bg-[#434344] font-[300] text-xs md:text-base tracking-tighter md:tracking-tight rounded-full md:px-2 px-1"
           >
             {skill}
           </p>

@@ -175,6 +175,7 @@ export type Project = {
   slug: Slug;
   category: string;
   description: string;
+  orderId: number;
   link: string;
   skills: Array<string>;
   coverImage: {
@@ -297,7 +298,7 @@ export type GetResumeUrlQueryResult = {
   resumeUrl: string | null;
 } | null;
 // Variable: getProjectsDataQuery
-// Query: *[_type == 'project']{  _id,  title,  category,  link,  description,  "slug":slug.current,  skills,coverImage,  "images": image  }
+// Query: *[_type == 'project']{  _id,  title,  category,  link,  description,  "slug":slug.current,  skills,coverImage,  "images": image  } | order(title desc)
 export type GetProjectsDataQueryResult = Array<{
   _id: string;
   title: string;

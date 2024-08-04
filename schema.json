@@ -1014,6 +1014,13 @@
         },
         "optional": false
       },
+      "orderId": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": false
+      },
       "link": {
         "type": "objectAttribute",
         "value": {

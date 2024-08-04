@@ -35,6 +35,13 @@ export const projectType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "orderId",
+      title: "Order ID",
+      description: "The order they appear in the homepage",
+      type: "number",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "link",
       title: "Link",
       type: "url",
