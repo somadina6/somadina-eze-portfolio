@@ -36,11 +36,13 @@ export const heroType = defineType({
           name: "company_name",
           title: "Company Name",
           type: "text",
+          validation: (rule) => rule.required().error("Name is required"),
         },
         {
           name: "company_url",
           title: "Company Website",
           type: "url",
+          validation: (rule) => rule.required().error("Name is required"),
         },
       ],
     }),
@@ -64,6 +66,9 @@ export const heroType = defineType({
         {
           title: "Social Link",
           type: "object",
+          validation: (rule) =>
+            rule.required().error("A Social Link is required"),
+
           fields: [
             {
               name: "platform",
@@ -96,6 +101,8 @@ export const heroType = defineType({
               options: {
                 hotspot: true,
               },
+              validation: (rule) =>
+                rule.required().error("Icon/Image is required"),
             },
           ],
         },

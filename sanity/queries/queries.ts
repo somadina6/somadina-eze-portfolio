@@ -2,16 +2,8 @@ import { groq } from "next-sanity";
 
 export const getHeroQuery = groq`*[_type == "hero"][0]{
 name,
-bio,
 "imageUrl": profileImage.asset->url,
-title,
-"socialLinks": socialLinks[]{
-      "platform": platform,
-      "url": url,
-      "icon": icon,
-      "image": image.asset->url,
-      "_key":_key
-    },
+profileImage,
 "resumeUrl": resume.asset->url,
 current_company
 }`;
@@ -19,3 +11,16 @@ current_company
 export const getResumeUrlQuery = groq`*[_type == "hero"][0]{
     "resumeUrl": resume.asset->url
     }`;
+
+export const getProjectsDataQuery = groq`*[_type == 'project' ]{
+  _id,
+  orderId,
+  title,
+  category,
+  link,
+  description,
+  "slug":slug.current,
+  skills,
+  coverImage,
+  "images": image
+    } |order(orderId asc)`;

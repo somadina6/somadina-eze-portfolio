@@ -13,7 +13,7 @@ html {
 }
 
 .divbg {
-  @apply dark:bg-black-100 rounded-md md:rounded-3xl md:p-5 px-5 py-3 flex flex-col items-center md:gap-3;
+  @apply dark:bg-black-100 bg-neutral-50 rounded-md md:rounded-3xl md:p-5 px-5 py-3 flex flex-col items-center md:gap-3;
 }
 
 .myh1 {
@@ -26,4 +26,10 @@ html {
 
 .img1 {
   @apply w-[30px] h-[30px] md:w-[50px] md:h-[50px] mb-0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+  gap: 20px;
 }

@@ -1,6 +1,10 @@
 import { client } from "./client";
 import * as queries from "../queries/queries";
-import { GetHeroQueryResult, GetResumeUrlQueryResult } from "@/sanity.types";
+import {
+  GetHeroQueryResult,
+  GetProjectsDataQueryResult,
+  GetResumeUrlQueryResult,
+} from "@/sanity.types";
 
 export async function getHeroData() {
   try {
@@ -26,6 +30,20 @@ export async function getResumeData() {
 
     const data: GetResumeUrlQueryResult = await res.json();
     return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getProjectsData() {
+  try {
+    const res = await client.fetch<GetProjectsDataQueryResult>(
+      queries.getProjectsDataQuery,
+      {},
+      { cache: "no-cache" }
+    );
+
+    return res;
   } catch (error) {
     console.log(error);
   }

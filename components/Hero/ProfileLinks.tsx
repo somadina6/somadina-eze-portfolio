@@ -1,17 +1,31 @@
-import { getHeroData } from "@/sanity/lib/api";
 import Image from "next/image";
-import React from "react";
 
-const ProfileLinks = async () => {
-  const hero = await getHeroData();
-  const profileLinks = hero?.socialLinks;
-  if (!profileLinks) {
-    return null;
-  }
+const socialLinks = [
+  {
+    _key: "90c63ec404fc",
+    platform: "LinkedIn",
+    url: "http://www.linkedin.com/in/somadina",
+    image: "/icons/linkedin.svg",
+  },
+  {
+    _key: "46059ddbed86",
+    platform: "Github",
+    image: "/icons/github.svg",
+    url: "https://github.com/somadina6",
+  },
+];
+
+const ProfileLinks = () => {
   return (
     <section className="flex mx-auto gap-2">
-      {profileLinks.map(({ _key, platform, url, image }) => (
-        <a key={_key} href={url} target="_blank">
+      {socialLinks.map(({ _key, platform, url, image }) => (
+        <a
+          key={_key}
+          href={url}
+          target="_blank"
+          className="hover:scale-110 transition"
+          rel="noopener noreferrer"
+        >
           <Image
             width={30}
             height={30}

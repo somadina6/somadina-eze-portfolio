@@ -1,6 +1,7 @@
 import { getHeroData } from "@/sanity/lib/api";
 import Image from "next/image";
 import ProfileLinks from "./ProfileLinks";
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function Hero() {
   const hero = await getHeroData();
@@ -9,7 +10,10 @@ export default async function Hero() {
   const currentCompanyName = hero?.current_company?.company_name || "VerveAR";
   const currentCompanyUrl =
     hero?.current_company?.company_url || "https://www.vervear.com";
-  const profileImageUrl = hero?.imageUrl || "/profile.jpeg";
+  // const profileImageUrl = hero?.imageUrl || "/profile.jpeg";
+  const profileImageUrl = hero?.profileImage
+    ? urlFor(hero?.profileImage).sharpen(20).url()
+    : "/profile.jpeg";
 
   return (
     <section

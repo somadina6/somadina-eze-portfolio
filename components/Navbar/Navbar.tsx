@@ -3,7 +3,6 @@ import { getResumeData } from "@/sanity/lib/api";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import ProfileLinks from "../Hero/ProfileLinks";
 
 const navLinks = [
   {
@@ -15,7 +14,7 @@ const navLinks = [
     name: "Projects",
     href: "#projects",
   },
-  
+
   {
     name: "Contact",
     href: "#contact",
@@ -36,26 +35,26 @@ export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
 
   // Handle navbar auto hide scrolling down
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll =
-        window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScroll > lastScrollTop) {
-        // Scrolling down
-        setShowNavbar(false);
-      } else {
-        // Scrolling up
-        setShowNavbar(true);
-      }
-      setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScroll =
+  //       window.pageYOffset || document.documentElement.scrollTop;
+  //     if (currentScroll > lastScrollTop) {
+  //       // Scrolling down
+  //       setShowNavbar(false);
+  //     } else {
+  //       // Scrolling up
+  //       setShowNavbar(true);
+  //     }
+  //     setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollTop]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollTop]);
 
   // Handle resume fetch from sanity
   useEffect(() => {
@@ -65,7 +64,7 @@ export default function Navbar() {
       try {
         const resume = await getResumeData();
         if (isMounted && resume?.resumeUrl) {
-          setResumeURL(`${resume.resumeUrl}/Somadina_Eze_Resume.pdf?dl`);
+          setResumeURL(`${resume.resumeUrl}/Somadina_Eze_Resume.pdf`);
         }
       } catch (error) {
         console.error("Failed to fetch resume data:", error);
@@ -99,9 +98,11 @@ export default function Navbar() {
 
   return (
     <div
-      className={`md:flex items-center justify-between py-1 px-2 md:px-4 md:py-8 bg-black  text-sm md:text-base transition-[0.3s] md:h-12`}
+      className={`md:flex items-center justify-between py-1 px-2 md:px-4 md:py-8 dark:bg-black  text-sm md:text-base transition-[0.3s] md:h-12`}
     >
-      <h3 className="hidden md:block text-sm">Somadina&apos;s Portfolio</h3>
+      <Link href={"/"}>
+        <h3 className="hidden md:block text-sm">Somadina&apos;s Portfolio</h3>
+      </Link>
 
       <div ref={navRef} className="w-full md:w-[420px] text-left ">
         <button onClick={toggleMenu} className="focus:outline-none md:hidden">
@@ -127,7 +128,7 @@ export default function Navbar() {
           {navLinks.map(({ href, name }, index) => (
             <li
               key={index}
-              className={`text-sm hover:text-white ${pathname === href ? "dark:text-blue" : "dark:text-gray-100"}`}
+              className={`text-sm dark:hover:text-white hover:text-blue ${pathname === href ? "text-blue" : "text-gray-100"}`}
             >
               <Link
                 href={name === "Resume" ? myResumeURL : href}
