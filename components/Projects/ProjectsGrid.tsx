@@ -6,7 +6,7 @@ const ProjectsGrid = async () => {
   const myProjectsData = await getProjectsData();
   if (!myProjectsData) return null;
   return (
-    <section className="projects-grid grid-cols-1 lg:grid-cols-2">
+    <section className="projects-grid grid-cols-1 lg:grid-cols-2 xl:gap-5">
       {myProjectsData.map(
         ({
           _id,
