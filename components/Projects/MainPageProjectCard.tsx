@@ -21,7 +21,7 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 hover:scale-105 transition h-full flex flex-col ">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 hover:scale-105 transition h-full flex flex-col relative">
       <a className="absolute top-2 left-2 " href={link}>
         <Image
           className="w-[20px] h-[20px] md:h-[30px] md:w-[30px] "
