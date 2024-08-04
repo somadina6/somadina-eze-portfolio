@@ -21,8 +21,18 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 hover:scale-105 transition h-[50vh] md:h-full flex flex-col cursor-pointer">
-      <div className="flex flex-col items-center p-1 md:p-3">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 hover:scale-105 transition h-full flex flex-col ">
+      <a className="absolute top-2 left-2 " href={link}>
+        <Image
+          className="w-[20px] h-[20px] md:h-[30px] md:w-[30px] "
+          src="/icons/github.svg"
+          width={30}
+          height={30}
+          alt="Github"
+        />
+      </a>
+
+      <div className="flex flex-col items-center p-2 md:p-3">
         <div className="flex flex-col items-center text-center ">
           {/* Project Title */}
           <div className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wider">
@@ -34,7 +44,7 @@ const MainPageProjectCard: FC<CardProps> = ({
         </div>
         {/* Description */}
 
-        <p className="font-[300] text-[#8A8A93] text-sm md:text-base line-clamp-1 md:line-clamp-2">
+        <p className="font-[300] text-[#8A8A93] text-sm md:text-base line-clamp-2">
           {description}
         </p>
       </div>
