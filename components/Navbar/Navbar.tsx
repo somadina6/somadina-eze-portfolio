@@ -14,8 +14,7 @@ const navLinks = [
     name: "Projects",
     href: "#projects",
   },
-  
-  
+
   {
     name: "Contact",
     href: "#contact",
