@@ -21,9 +21,9 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3  h-full flex flex-col relative cursor-pointer hover:scale-105 transition">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3  h-full flex flex-col relative cursor-pointer hover:scale-[1.01] transition">
       <a
-        className="absolute top-2 md:top-3 right-2 md:right-3 hover:opacity-90 bg-blue rounded-full"
+        className="absolute top-2 md:top-3 right-2 md:right-3 opacity-50 hover:opacity-100 bg-blue rounded-full"
         href={link}
         target="_blank"
         rel="noopener noreferrer"
@@ -58,7 +58,7 @@ const MainPageProjectCard: FC<CardProps> = ({
       <div className="flex flex-col items-center mb-2 md:mb-3">
         <div className="flex flex-col items-center text-center ">
           {/* Project Title */}
-          <div className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wider">
+          <div className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wide">
             {title}
             <span> </span>
           </div>
