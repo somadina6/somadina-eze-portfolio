@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ContactEmail() {
   return (
     <section
-      id="contact_email"
+      id="contact"
       className="divbg col-span-6 md:col-span-4 row-span-1 md:row-span-1 flex flex-col items-center gap-1 "
     >
       <div className="img1">
