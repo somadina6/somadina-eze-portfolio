@@ -55,19 +55,19 @@ const MainPageProjectCard: FC<CardProps> = ({
         />
       </a> */}
 
-      <div className="flex flex-col md:flex-row items-center md:items-start mb-2 md:mb-2 w-full">
-        <div className="flex flex-col items-center md:items-start text-center md:text-left md:p-4 md:w-full">
+      <div className="flex flex-col md:flex-row items-center md:items-start mb-2 md:mb-2 w-full ">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left md:p-4 md:w-1/2">
           {/* Project Title */}
-          <h1 className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wide">
+          <h1 className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wide text-nowrap">
             {title}
           </h1>
-          <p className="text-[#8A8A93] font-[300] text-sm md:text-base md:mt-1">
+          <p className="text-[#8A8A93] font-[300] text-sm md:text-base md:mt-1 text-nowrap ">
             {subtitle}
           </p>
         </div>
         {/* Description */}
         {/* 8A8A93 */}
-        <p className="font-[300] text-[#fff] text-sm md:text-base line-clamp-2 md:pt-4 md:mr-[90px]">
+        <p className="font-[300] text-[#fff] text-sm md:text-base line-clamp-2 lg:line-clamp-3 md:pt-4 md:mr-[90px] md:w-1/2 ">
           {description}
         </p>
       </div>
