@@ -21,6 +21,7 @@ export const getProjectsDataQuery = groq`*[_type == 'project' ]{
   description,
   "slug":slug.current,
   skills,
+  stack,
   coverImage,
   "images": image
     } |order(orderId asc)`;

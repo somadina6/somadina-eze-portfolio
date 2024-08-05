@@ -12,7 +12,7 @@ export default async function Hero() {
     hero?.current_company?.company_url || "https://www.vervear.com";
   // const profileImageUrl = hero?.imageUrl || "/profile.jpeg";
   const profileImageUrl = hero?.profileImage
-    ? urlFor(hero?.profileImage).sharpen(20).url()
+    ? urlFor(hero?.profileImage).sharpen(20).quality(100).url()
     : "/profile.jpeg";
 
   return (

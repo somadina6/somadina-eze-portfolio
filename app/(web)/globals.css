@@ -30,6 +30,5 @@ html {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 800px));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 730px));
 }

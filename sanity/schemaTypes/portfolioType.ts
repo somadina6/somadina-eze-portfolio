@@ -57,6 +57,30 @@ export const projectType = defineType({
       },
     }),
     defineField({
+      name: "stack",
+      type: "array",
+      title: "Stack",
+      validation: (rule) => rule.required(),
+      options: { layout: "grid" },
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "skill",
+              type: "string",
+              validation: (rule) => rule.required(),
+            },
+            {
+              name: "image",
+              type: "image",
+              validation: (Rule) => Rule.required().assetRequired(),
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: "coverImage",
       title: "Cover Image",
       type: "image",

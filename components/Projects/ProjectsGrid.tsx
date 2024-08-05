@@ -7,7 +7,7 @@ const ProjectsGrid = async () => {
   if (!myProjectsData) return null;
   return (
     <div className="flex items-center ">
-      <section className="projects-grid grid-cols-1 mx-auto ">
+      <section className="projects-grid grid-cols-1 mx-auto gap-5 md:gap-14">
         {myProjectsData.map(
           ({
             _id,
@@ -18,16 +18,23 @@ const ProjectsGrid = async () => {
             skills,
             slug,
             title,
+            stack,
+            orderId,
+            images,
           }) => (
             <MainPageProjectCard
               description={description}
-              imageSrc={urlFor(coverImage).quality(100).url()}
+              coverImage={coverImage}
               link={link}
               skills={skills}
-              subtitle={category}
+              category={category}
               title={title}
               key={_id}
               slug={slug}
+              stack={stack}
+              orderId={orderId}
+              _id={_id}
+              images={images}
             />
           )
         )}

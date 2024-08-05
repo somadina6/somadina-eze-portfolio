@@ -178,6 +178,21 @@ export type Project = {
   orderId: number;
   link: string;
   skills: Array<string>;
+  stack: Array<{
+    skill: string;
+    image: {
+      asset: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _key: string;
+  }>;
   coverImage: {
     asset: {
       _ref: string;
@@ -298,15 +313,31 @@ export type GetResumeUrlQueryResult = {
   resumeUrl: string | null;
 } | null;
 // Variable: getProjectsDataQuery
-// Query: *[_type == 'project']{  _id,  title,  category,  link,  description,  "slug":slug.current,  skills,coverImage,  "images": image  } | order(title desc)
+// Query: *[_type == 'project' ]{  _id,  orderId,  title,  category,  link,  description,  "slug":slug.current,  skills,  stack,  coverImage,  "images": image    } |order(orderId asc)
 export type GetProjectsDataQueryResult = Array<{
   _id: string;
+  orderId: number;
   title: string;
   category: string;
   link: string;
   description: string;
   slug: string;
   skills: Array<string>;
+  stack: Array<{
+    skill: string;
+    image: {
+      asset: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    _key: string;
+  }>;
   coverImage: {
     asset: {
       _ref: string;
