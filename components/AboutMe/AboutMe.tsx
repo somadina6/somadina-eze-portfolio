@@ -1,7 +1,7 @@
 const AboutMe = () => {
   return (
     <section className="divbg col-span-12 gap-1 ">
-      <h1 className="myh1 uppercase md:capitalize font-bold text-center">
+      <h1 className="myh1 uppercase md:capitalize font-bold text-center lg:text-[23px]">
         About
       </h1>
       <p className="text-sm md:text-base tracking-wider text-center font-[300]">

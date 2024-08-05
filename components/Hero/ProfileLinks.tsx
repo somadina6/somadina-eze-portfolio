@@ -23,7 +23,7 @@ const ProfileLinks = () => {
           key={_key}
           href={url}
           target="_blank"
-          className="hover:scale-110 transition"
+          className="hover:scale-110 transition relative group"
           rel="noopener noreferrer"
         >
           <Image
@@ -33,6 +33,9 @@ const ProfileLinks = () => {
             className="w-[20px] h-[20px] md:h-[30px] md:w-[30px]"
             alt={platform}
           />
+          <p className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity bg-white text-black text-xs md:text-sm p-1 rounded shadow-md">
+            {platform}
+          </p>
         </a>
       ))}
     </section>

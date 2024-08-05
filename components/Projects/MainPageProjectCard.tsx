@@ -21,9 +21,9 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3  h-full flex flex-col relative cursor-pointer hover:scale-[1.01] transition">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 h-full flex flex-col relative cursor-pointer hover:scale-[1.01] transition mx-auto w-full">
       <a
-        className="absolute top-2 md:top-3 right-2 md:right-3 opacity-50 hover:opacity-100 bg-blue rounded-full"
+        className="absolute top-2 md:top-7 right-2 md:right-3 opacity-50 hover:opacity-100 bg-blue rounded-full md:p-3"
         href={link}
         target="_blank"
         rel="noopener noreferrer"
@@ -55,24 +55,23 @@ const MainPageProjectCard: FC<CardProps> = ({
         />
       </a> */}
 
-      <div className="flex flex-col items-center mb-2 md:mb-3">
-        <div className="flex flex-col items-center text-center ">
+      <div className="flex flex-col md:flex-row items-center md:items-start mb-2 md:mb-2 w-full">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left md:p-4 md:w-full">
           {/* Project Title */}
-          <div className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wide">
+          <h1 className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wide">
             {title}
-            <span> </span>
-          </div>
-          <p className="text-[#8A8A93] font-[300] text-sm md:text-base">
+          </h1>
+          <p className="text-[#8A8A93] font-[300] text-sm md:text-base md:mt-1">
             {subtitle}
           </p>
         </div>
         {/* Description */}
-
-        <p className="font-[300] text-[#8A8A93] text-sm md:text-base line-clamp-2">
+        {/* 8A8A93 */}
+        <p className="font-[300] text-[#fff] text-sm md:text-base line-clamp-2 md:pt-4 md:mr-[90px]">
           {description}
         </p>
       </div>
-      <div className="rounded-lg overflow-hidden w-full flex-grow ">
+      <div className="rounded-lg overflow-hidden w-full flex-grow hidden md:block">
         <Image
           className="w-full object-bottom h-full "
           src={imageSrc}
