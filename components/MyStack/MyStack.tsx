@@ -5,7 +5,7 @@ import "./mystack.styles.css";
 const MyStack = () => {
   return (
     <section className="divbg col-span-12 gap-1 md:gap-2 flex flex-col ">
-      <h2 className="myh1 uppercase md:capitalize font-bold text-center">
+      <h2 className="myh1 uppercase md:capitalize font-bold text-center lg:text-[23px]">
         My Stack
       </h2>
       <ul className="w-full flex gap-4 md:gap-6 flex-wrap items-center justify-center p-1">

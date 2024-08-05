@@ -21,15 +21,15 @@ const MainPageProjectCard: FC<CardProps> = ({
   skills,
 }) => {
   return (
-    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 h-full flex flex-col relative cursor-pointer hover:scale-[1.01] transition mx-auto ">
+    <div className="dark:bg-black-100 bg-neutral-50 rounded-xl p-2 md:p-3 h-full flex flex-col relative cursor-pointer hover:scale-[1.01] transition mx-auto w-full">
       <a
-        className="absolute top-2 md:top-7 right-2 md:right-3 opacity-50 hover:opacity-100 bg-blue rounded-full"
+        className="absolute top-2 md:top-7 right-2 md:right-3 opacity-50 hover:opacity-100 bg-blue rounded-full md:p-3"
         href={link}
         target="_blank"
         rel="noopener noreferrer"
       >
         <svg
-          className="w-[20px] h-[20px] md:h-[50px] md:w-[50px]  "
+          className="w-[20px] h-[20px] md:h-[30px] md:w-[30px]  "
           width="48"
           height="48"
           viewBox="0 0 48 48"
@@ -55,7 +55,7 @@ const MainPageProjectCard: FC<CardProps> = ({
         />
       </a> */}
 
-      <div className="flex flex-col md:flex-row items-center md:items-start mb-2 md:mb-2 ">
+      <div className="flex flex-col md:flex-row items-center md:items-start mb-2 md:mb-2 w-full">
         <div className="flex flex-col items-center md:items-start text-center md:text-left md:p-4 md:w-full">
           {/* Project Title */}
           <h1 className="font-[500] text-sm md:text-xl lg:text-2xl tracking-wide">
@@ -67,7 +67,7 @@ const MainPageProjectCard: FC<CardProps> = ({
         </div>
         {/* Description */}
         {/* 8A8A93 */}
-        <p className="font-[300] text-[#fff] text-sm md:text-base line-clamp-2 md:pt-4 md:mr-[60px]">
+        <p className="font-[300] text-[#fff] text-sm md:text-base line-clamp-2 md:pt-4 md:mr-[90px]">
           {description}
         </p>
       </div>
