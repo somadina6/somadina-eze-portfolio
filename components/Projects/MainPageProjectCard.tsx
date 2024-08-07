@@ -81,7 +81,8 @@ const MainPageProjectCard = forwardRef<
 
         {/* Stack */}
         {stack && (
-          <ul className="hidden md:flex flex-col gap-1 md:gap-4 flex-wrap  justify-center absolute top-40 -left-20  bg-black-100 p-4 rounded-lg">
+          <ul className="hidden md:flex flex-col gap-1 md:gap-4 flex-wrap  justify-center absolute top-0 -right-20  bg-black-100 p-4 rounded-lg">
+            <p className="font-[300]">Stack</p>
             {stack.map(({ skill, image, _key }) => (
               <li
                 key={_key}

@@ -79,9 +79,8 @@ const ProjectsGrid = ({
       </section>
       {!isMaxProjects && (
         <button
-          className={`mt-3 md:mt-5 ${isMaxProjects ? "bg-neutral-600" : "bg-blue"} text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-xs md:text-base`}
+          className={`mt-3 md:mt-5 bg-blue text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-xs md:text-base`}
           onClick={handleShowMore}
-          disabled={isMaxProjects}
         >
           Show More Projects
         </button>
@@ -89,9 +88,8 @@ const ProjectsGrid = ({
 
       {isMaxProjects && (
         <button
-          className={`mt-3 md:mt-5 ${!isMaxProjects ? "bg-neutral-600" : "bg-blue"} text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-sm md:text-base`}
+          className={`mt-3 md:mt-5 bg-blue text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-sm md:text-base`}
           onClick={handleShowLess}
-          disabled={!isMaxProjects}
         >
           Show Less
         </button>
