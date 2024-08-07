@@ -68,11 +68,11 @@ const MainPageProjectCard = forwardRef<
         </div>
 
         {/* Skills */}
-        <div className="flex gap-1 md:gap-3 text-lg font-medium items-center justify-center w-full overflow-hidden mt-2 md:mt-4">
+        <div className="flex gap-1 md:gap-3 items-center justify-center w-full overflow-hidden mt-2 md:mt-4">
           {skills.map((skill, index) => (
             <p
               key={index}
-              className="text-[#fff] bg-[#434344] font-[300] text-xs md:text-base tracking-tighter md:tracking-tight rounded-full md:px-2 px-1 line-clamp-1 hover:bg-neutral-400"
+              className="text-[#fff] bg-[#434344] font-[300] text-sm md:text-base tracking-tighter md:tracking-tight rounded-lg  px-2 line-clamp-1 hover:bg-neutral-400"
             >
               {skill}
             </p>

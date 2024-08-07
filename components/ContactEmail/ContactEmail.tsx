@@ -22,7 +22,7 @@ export default function ContactEmail() {
         <p className="hidden md:block">Contact Me</p>
         <span className="flex md:hidden w-[20px] h-[20px] items-center justify-center">
           <Image
-            src="/icons/message.png"
+            src="/icons/email1.png"
             width={48}
             height={48}
             alt="message icon"

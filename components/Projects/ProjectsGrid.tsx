@@ -35,7 +35,8 @@ const ProjectsGrid = ({
   };
 
   return (
-    <div className="flex flex-col items-center ">
+    <section className="w-full">
+    <div className="flex items-center ">
       <section
         id="projects"
         className="projects-grid grid-cols-1 mx-auto gap-5 md:gap-14"
@@ -44,57 +45,48 @@ const ProjectsGrid = ({
           .slice(0, noOfProjectsToShow)
           .map(
             (
-              {
-                _id,
-                category,
-                coverImage,
-                description,
-                link,
-                skills,
-                slug,
-                title,
-                stack,
-                orderId,
-                images,
-              },
+              project,
               index
             ) => (
               <MainPageProjectCard
-                description={description}
-                coverImage={coverImage}
-                link={link}
-                skills={skills}
-                category={category}
-                title={title}
-                key={_id}
-                slug={slug}
-                stack={stack}
-                orderId={orderId}
-                _id={_id}
-                images={images}
+                description={project.description}
+                coverImage={project.coverImage}
+                link={project.link}
+                skills={project.skills}
+                category={project.category}
+                title={project.title}
+                key={project._id}
+                slug={project.slug}
+                stack={project.stack}
+                orderId={project.orderId}
+                _id={project._id}
+                images={project.images}
                 ref={index === noOfProjectsToShow - 1 ? newestProjectRef : null}
               />
             )
           )}
       </section>
-      {!isMaxProjects && (
-        <button
-          className={`mt-3 md:mt-5 bg-blue text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-xs md:text-base`}
-          onClick={handleShowMore}
-        >
-          Show More Projects
-        </button>
-      )}
-
-      {isMaxProjects && (
-        <button
-          className={`mt-3 md:mt-5 bg-blue text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-sm md:text-base`}
-          onClick={handleShowLess}
-        >
-          Show Less
-        </button>
-      )}
+     
     </div>
+
+{!isMaxProjects && (
+  <button
+    className={`mx-auto block mt-3 md:mt-5 bg-blue text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-sm md:text-base`}
+    onClick={handleShowMore}
+  >
+    Show More Projects
+  </button>
+)}
+
+{isMaxProjects && (
+  <button
+    className={`block mx-auto mt-3 md:mt-5 bg-blue text-white px-2 py-1 md:px-4 md:py-2 rounded-lg text-sm md:text-base`}
+    onClick={handleShowLess}
+  >
+    Show Less
+  </button>
+)}
+</section>
   );
 };
 
