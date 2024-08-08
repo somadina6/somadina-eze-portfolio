@@ -30,5 +30,17 @@ html {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 730px));
+  
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(auto, 600px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+     grid-template-columns: repeat(auto-fit, minmax(auto,730px));
+  }
 }
