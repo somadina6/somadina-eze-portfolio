@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import MainPageProjectCard from "./MainPageProjectCard";
 import { GetProjectsDataQueryResult } from "@/sanity.types";
-import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 const ProjectsGrid = ({
   projects,
@@ -33,6 +33,8 @@ const ProjectsGrid = ({
     });
     
     sendGAEvent('event', 'show_more_projects_event', { value: 'xyz' })
+    sendGTMEvent({'event': 'show_more_projects_event',  value: 'xyz' })
+    
 
     setNoOfProjectsToShow((prev) => prev + 1);
   };
