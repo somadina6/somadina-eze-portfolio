@@ -31,6 +31,8 @@ const ProjectsGrid = ({
       event_category: "Button",
       event_label: "click",
     });
+    
+    sendGAEvent('event', 'show_more_projects_event', { value: 'xyz' })
 
     setNoOfProjectsToShow((prev) => prev + 1);
   };
