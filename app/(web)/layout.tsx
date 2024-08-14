@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-KC649DCB" />
-      {/* <GoogleAnalytics gaId="G-B5F6SWTQZ1" /> */}
+      <GoogleAnalytics gaId="G-B5F6SWTQZ1" />
       <body className={`${inter.className} `}>
         <main className="dark dark:text-white dark:bg-black text-black w-screen font-normal px-6 md:px-12 pb-4 min-h-lvh overflow-x-hidden">
           <Navbar />
