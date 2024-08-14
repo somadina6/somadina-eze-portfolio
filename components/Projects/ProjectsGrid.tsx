@@ -22,20 +22,10 @@ const ProjectsGrid = ({
   }, [noOfProjectsToShow]);
 
   const handleShowMore = () => {
-    sendGAEvent("show_more_projects", {
-      event_category: "Button",
-      event_label: "click",
-    });
-    sendGAEvent({
-      event: "show_more_projects_event",
-      event_category: "Button",
-      event_label: "click",
-    });
     
-    sendGAEvent('event', 'show_more_projects_event', { value: 'xyz' })
-    sendGTMEvent({'event': 'show_more_projects_event',  value: 'xyz' })
-    
-
+   sendGAEvent('event', 'show_more_projects', { value: 'xyz', event_category: "Button",
+      event_label: "click", })
+   
     setNoOfProjectsToShow((prev) => prev + 1);
   };
 

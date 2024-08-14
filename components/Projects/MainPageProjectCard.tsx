@@ -1,5 +1,6 @@
 import { GetProjectsDataQueryResult } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
+import { sendGAEvent } from "@next/third-parties/google";
 import Image from "next/image";
 import { forwardRef } from "react";
 
@@ -21,6 +22,7 @@ const MainPageProjectCard = forwardRef<
           href={link}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={()=>{sendGAEvent('event', title, { type:'button'})}}
         >
           <svg
             className="w-[20px] h-[20px] md:h-[30px] md:w-[30px]  "
