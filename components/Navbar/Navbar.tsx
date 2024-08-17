@@ -1,5 +1,6 @@
 "use client";
 import { getResumeData } from "@/sanity/lib/api";
+import { sendGAEvent } from "@next/third-parties/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -127,13 +128,20 @@ export default function Navbar() {
         >
           {navLinks.map(({ href, name }, index) => (
             <li
-              key={index}
+              key={`${name}__${index}`}
               className={`text-sm dark:hover:text-white hover:text-blue ${pathname === href ? "text-blue" : "text-gray-100"}`}
             >
               <Link
                 href={name === "Resume" ? myResumeURL : href}
                 target={name === "Resume" ? "_blank" : "_self"}
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  setMenuOpen(false); 
+                  sendGAEvent(
+                    'event',
+                    `${name}_menu_clicked`), 
+                    {event_label: "click"}
+                    }
+                }
                 rel={name === "Resume" ? "noopener noreferrer" : ""}
               >
                 {name}

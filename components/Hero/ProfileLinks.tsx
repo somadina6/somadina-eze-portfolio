@@ -1,3 +1,5 @@
+'use client'
+import { sendGAEvent } from "@next/third-parties/google";
 import Image from "next/image";
 
 const socialLinks = [
@@ -25,6 +27,7 @@ const ProfileLinks = () => {
           target="_blank"
           className="hover:scale-110 transition relative group"
           rel="noopener noreferrer"
+          onClick={()=>sendGAEvent('event',`${platform}_profile_clicked`, {event_type:'button'})}
         >
           <Image
             width={30}

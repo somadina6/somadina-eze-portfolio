@@ -22,7 +22,7 @@ const MainPageProjectCard = forwardRef<
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={()=>{sendGAEvent('event', title, { type:'button'})}}
+          onClick={()=>{sendGAEvent('event', `${title}_project_clicked`, { type:'button'})}}
         >
           <svg
             className="w-[20px] h-[20px] md:h-[30px] md:w-[30px]  "
