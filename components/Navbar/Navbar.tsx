@@ -19,11 +19,11 @@ const navLinks = [
   {
     name: "Contact",
     href: "#contact",
-  },
-  {
-    name: "Resume",
-    href: "/docs/Somadina_Eze.pdf", // default value, will be updated
-  },
+  }
+  // {
+  //   name: "Resume",
+  //   href: "/docs/Somadina_Eze.pdf", // default value, will be updated
+  // },
 ];
 
 export default function Navbar() {
